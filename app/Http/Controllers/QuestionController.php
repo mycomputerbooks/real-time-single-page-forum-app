@@ -67,8 +67,18 @@ class QuestionController extends Controller
      */
     public function update(Request $request, Question $question)
     {
-        //
+        $question->update($request->all());
+        //echo $request;
+        return response('Update', Response::HTTP_ACCEPTED);
     }
+
+    // public function update(Request $request, Question $question){
+	// 	$question->update(['title'=> $request->title, 'slug'=>str_slug($request->title), 'body'=>$request->body,]);
+	// 	return response('Update', 200);
+    // }
+
+
+
 
     /**
      * Remove the specified resource from storage.
