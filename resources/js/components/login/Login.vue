@@ -28,17 +28,15 @@ export default {
     data(){
         return {
             form :{
-                email:null,
-                password:null
+                // email:null,
+                email:"mitchell.madge@example.net",
+                password:"password"
             }
         }
     },
     methods:{
         login(){
-            //alert('hooty');
-            axios.post('api/auth/login',this.form)
-            .then(res => console.log(res.data))
-            .catch(error => console.log(error.response.data))
+            User.login(this.form)
         }
     }
 }
